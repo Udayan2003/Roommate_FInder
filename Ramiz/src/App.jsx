@@ -1,15 +1,13 @@
 import React from 'react';
 import './stylesheet/App.css';
-import './Style.css';
+import LoginForm from './Pages/Login';
 
 function App() {
-
   return (
-
     <div>
      <div>
       <div>
-        <h1>Hi First time ?</h1>
+        <LoginForm />
       </div>
      </div>
     </div>
