@@ -19,6 +19,10 @@ function RegisterForm() {
                             <input id="name" name="name" type="text" autocomplete="name" required class="dark:text-white appearance-none rounded-none relative block w-full px-3 py-3 border border-gray-500 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm bg-gray-800" placeholder="Name" />
                         </div>
                         <div>
+                            <label for="name" class="sr-only">Registration Number</label>
+                            <input id="name" name="name" type="text" autocomplete="name" required class="dark:text-white appearance-none rounded-none relative block w-full px-3 py-3 border border-gray-500 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm bg-gray-800" placeholder="Registration Number" />
+                        </div>
+                        <div>
                             <label for="email-address" class="sr-only">Email address</label>
                             <input id="email-address" name="email" type="email" autocomplete="email" required class="dark:text-white appearance-none rounded-none relative block w-full px-3 py-3 border border-gray-500 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm bg-gray-800" placeholder="Email address" />
                         </div>

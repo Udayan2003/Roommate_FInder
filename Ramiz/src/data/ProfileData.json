@@ -1,0 +1,11 @@
+{
+    "Profile": [
+        {
+            "FullName": "Test",
+            "Reg.No": "21BCE5555",
+            "Gender":"M",
+            "Sleep Schedule": 1,
+            "Cleanliness": 5
+        }
+    ]
+}
