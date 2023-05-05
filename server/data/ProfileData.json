@@ -1,12 +1,12 @@
 {
     "Profile": [
         {
-            "Name": "Test",
+            "Name": "TestSuccess",
             "RegNo": "21BCE5555",
             "Email":"test@gmail.com",
             "SleepSchedule": 1,
-            "SocialActivity": 3,
-            "Cleanliness": 5
+            "SocialActivity": 2,
+            "Cleanliness": 8
         }
     ]
 }
