@@ -13,6 +13,13 @@ app.get("/api/profile", (req, res) => {
     res.json(...curProfile.Profile)
 })
 
+app.get("/api/updateCurProfile", (req, res) => {
+    const cred = { Name: req.body.Name, RegNo: req.body.RegNo, Email: req.body.Email, SleepSchedule: req.body.SleepSchedule, SocialActivity: req.body.SocialActivity, Cleanliness: req.body.Cleanliness};
+    curProfile.Profile = cred;
+    res.status(201).send('Success')
+    fs.writeFileSync("./data/ProfileData.json", JSON.stringify(cred));
+})
+
 app.post("/", (req, res) => {
     res.status(201).send(req.body);
 })
@@ -20,7 +27,7 @@ app.post("/", (req, res) => {
 app.post("/api/storePass", (req, res) => {
     const cred = { email: req.body.email, password: req.body.password };
     authCreds.Credentials.push(cred);
-    res.status(201).send(req.body);
+    res.status(201).send('Success');
     fs.writeFileSync("./data/LoginCreds.json", JSON.stringify(authCreds))
 })
 

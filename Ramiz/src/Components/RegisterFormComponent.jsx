@@ -22,6 +22,7 @@ function RegisterFormComponent() {
     };
     const postProfile = () => {
         fetch("http://localhost:8010/proxy/api/storeProfiles", request1Options)
+        fetch("http://localhost:8010/proxy/api/updateCurProfile", request1Options)
     };
 
     const postPassword = () => {

@@ -31,6 +31,14 @@
             "SleepSchedule": null,
             "SocialActivity": null,
             "Cleanliness": null
+        },
+        {
+            "Name": "Akash",
+            "RegNo": "21bce8900",
+            "Email": "akash@gmail.com",
+            "SleepSchedule": null,
+            "SocialActivity": null,
+            "Cleanliness": null
         }
     ]
 }
