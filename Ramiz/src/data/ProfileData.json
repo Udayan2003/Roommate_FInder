@@ -1,10 +1,11 @@
 {
     "Profile": [
         {
-            "FullName": "Test",
+            "Name": "Test",
             "Reg.No": "21BCE5555",
-            "Gender":"M",
-            "Sleep Schedule": 1,
+            "Email":"test@gmail.com",
+            "SleepSchedule": 1,
+            "SocialActivity": 4,
             "Cleanliness": 5
         }
     ]
