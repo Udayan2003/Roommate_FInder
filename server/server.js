@@ -31,4 +31,26 @@ app.post("/api/storeProfiles", (req, res) => {
     fs.writeFileSync("./data/AllProfiles.json", JSON.stringify(AllProfiles))
 })
 
-app.listen(5000, () => { console.log("Server Started on port 5000")})
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
+app.post('/login', (req, res) => {
+    const email = req.body.email;
+    const password = req.body.password;
+
+    // Store the data in a separate JSON file
+    const user = {
+      email: email,
+      password: password
+    }
+    fs.writeFile('./data.json', JSON.stringify(user), (err) => {
+      if (err) throw err;
+      console.log('User data has been saved!');
+    });
+
+    // Redirect to the Details page
+    res.redirect('/details');
+});
+
+app.listen(5000, () => { console.log("Server Started on port 5000")});
+
