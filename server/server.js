@@ -3,7 +3,7 @@ const app = express()
 const fs = require('fs')
 
 app.get("/api", (req, res) => {
-    res.json({"users":["userOne", "userTwo", "userThree"]})
+    res.json({"users":["userOne", "userTwo", "userThree", "userFour"]})
 })
 
 app.use(express.urlencoded({ extended: true }));
