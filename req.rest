@@ -1,0 +1,21 @@
+# GET http://localhost:5000/api/profile
+
+# POST http://localhost:5000/api/storePass
+# Content-Type: application/json
+
+# {
+#     "email": "Joe@gmail.com",
+#     "password": "password"
+# }
+
+POST http://localhost:5000/api/storeProfiles
+Content-Type: application/json
+
+{
+            "Name": "test3",
+            "RegNo": "21BCE5557",
+            "Email":"test3@gmail.com",
+            "SleepSchedule": 3,
+            "SocialActivity": 4,
+            "Cleanliness": 8
+}
