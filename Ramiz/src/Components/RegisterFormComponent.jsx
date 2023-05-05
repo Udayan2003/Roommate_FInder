@@ -4,9 +4,29 @@ import { Link, useNavigate } from 'react-router-dom';
 function RegisterFormComponent() {
     const navigator = useNavigate();
     const [input, setInput] = useState({
+        name: '',
+        regno: '',
+        email: '',
         password: '',
         confirmPassword: ''
     });
+    const request1Options = {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({Name: input.name, RegNo: input.regno, Email: input.email, SleepSchedule: null, SocialActivity: null, Cleanliness: null})
+    };
+    const request2Options = {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({email: input.email, password: input.password})
+    };
+    const postProfile = () => {
+        fetch("http://localhost:8010/proxy/api/storeProfiles", request1Options)
+    };
+
+    const postPassword = () => {
+        fetch("http://localhost:8010/proxy/api/storePass", request2Options)
+    }
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -15,7 +35,9 @@ function RegisterFormComponent() {
             return false;
         }
         else{
-            navigator("/");
+            postProfile()
+            postPassword()
+            navigator("/details");
         }
     }
 
@@ -33,15 +55,15 @@ function RegisterFormComponent() {
             <div class="rounded-md shadow-sm -space-y-px">
                 <div>
                     <label for="name" class="sr-only">Name</label>
-                    <input id="name" name="name" type="text" autocomplete="name" required class="dark:text-white appearance-none rounded-none relative block w-full px-3 py-3 border border-gray-500 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm bg-gray-800" placeholder="Name" />
+                    <input onChange={handleChange} id="name" value={input.name} name="name" type="text" autocomplete="name" required class="dark:text-white appearance-none rounded-none relative block w-full px-3 py-3 border border-gray-500 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm bg-gray-800" placeholder="Name" />
                 </div>
                 <div>
                     <label for="name" class="sr-only">Registration Number</label>
-                    <input id="name" name="name" type="text" autocomplete="name" required class="dark:text-white appearance-none rounded-none relative block w-full px-3 py-3 border border-gray-500 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm bg-gray-800" placeholder="Registration Number" />
+                    <input onChange={handleChange} id="name" value={input.regno} name="regno" type="text" autocomplete="name" required class="dark:text-white appearance-none rounded-none relative block w-full px-3 py-3 border border-gray-500 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm bg-gray-800" placeholder="Registration Number" />
                 </div>
                 <div>
                     <label for="email-address" class="sr-only">Email address</label>
-                    <input id="email-address" name="email" type="email" autocomplete="email" required class="dark:text-white appearance-none rounded-none relative block w-full px-3 py-3 border border-gray-500 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm bg-gray-800" placeholder="Email address" />
+                    <input onChange={handleChange} id="email-address" value={input.email} name="email" type="email" autocomplete="email" required class="dark:text-white appearance-none rounded-none relative block w-full px-3 py-3 border border-gray-500 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm bg-gray-800" placeholder="Email address" />
                 </div>
                 <div>
                     <label for="password" class="sr-only">Password</label>
