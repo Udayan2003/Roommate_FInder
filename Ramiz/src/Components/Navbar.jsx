@@ -9,7 +9,7 @@ function Navbar() {
         <div className="flex">
         </div>
         <div>
-            <Link to="/user" className="text-gray-100 hover:text-gray-300 mx-4">
+            <Link to="/profile" className="text-gray-100 hover:text-gray-300 mx-4">
                 <img src="user.svg" className="h-8 inline-block"/>
             </Link>
         </div>
