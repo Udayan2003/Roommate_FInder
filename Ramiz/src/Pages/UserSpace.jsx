@@ -7,7 +7,7 @@ function UserSpace(){
     return(
         <>
         <Navbar/>
-        <div className="bg-gray-900 h-auto">
+        <div className="bg-gray-900 h-screen">
             {Object.entries(TopMatches)[0][1].map((match, key) => {return <MatchCard key={key} name={match.name}/>})}
         </div>
         </>
