@@ -64,7 +64,7 @@ function Profile() {
   };
 
   const getProfileData = () => {
-    fetch("http://localhost:8010/proxy/api/profile", {
+    fetch("http://localhost:5000/api/user", {
       method: "GET",
       headers: {
         "Content-Type": "application/json"
@@ -76,7 +76,7 @@ function Profile() {
     });
   };
 
-    useEffect(getProfileData, []);
+  useEffect(getProfileData, []);
 
     return (
         <div className="bg-gray-900 h-auto">

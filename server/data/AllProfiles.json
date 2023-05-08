@@ -1,36 +1,44 @@
 {
-  "Profiles": [
-    {
-      "Name": "test",
-      "RegNo": "21BCE5555",
-      "Email": "test@gmail.com",
-      "SleepSchedule": 1,
-      "SocialActivity": 2,
-      "Cleanliness": 8
-    },
-    {
-      "Name": "test1",
-      "RegNo": "21BCE5556",
-      "Email": "test1@gmail.com",
-      "SleepSchedule": 5,
-      "SocialActivity": 8,
-      "Cleanliness": 2
-    },
-    {
-      "Name": "test3",
-      "RegNo": "21BCE5557",
-      "Email": "test3@gmail.com",
-      "SleepSchedule": 3,
-      "SocialActivity": 4,
-      "Cleanliness": 8
-    },
-    {
-      "Name": "Rahul",
-      "RegNo": "21bce6666",
-      "Email": "rahul@gmail.com",
-      "SleepSchedule": null,
-      "SocialActivity": null,
-      "Cleanliness": null
-    }
-  ]
+    "Profiles": [
+        {
+            "Name": "test",
+            "RegNo": "21BCE5555",
+            "Email": "test@gmail.com",
+            "SleepSchedule": 1,
+            "SocialActivity": 2,
+            "Cleanliness": 8
+        },
+        {
+            "Name": "test1",
+            "RegNo": "21BCE5556",
+            "Email": "test1@gmail.com",
+            "SleepSchedule": 5,
+            "SocialActivity": 8,
+            "Cleanliness": 2
+        },
+        {
+            "Name": "test3",
+            "RegNo": "21BCE5557",
+            "Email": "test3@gmail.com",
+            "SleepSchedule": 3,
+            "SocialActivity": 4,
+            "Cleanliness": 8
+        },
+        {
+            "Name": "Rahul",
+            "RegNo": "21bce6666",
+            "Email": "rahul@gmail.com",
+            "SleepSchedule": null,
+            "SocialActivity": null,
+            "Cleanliness": null
+        },
+        {
+            "Name": "Akash",
+            "RegNo": "21bce8900",
+            "Email": "akash@gmail.com",
+            "SleepSchedule": 0,
+            "SocialActivity": 0,
+            "Cleanliness": 0
+        }
+    ]
 }

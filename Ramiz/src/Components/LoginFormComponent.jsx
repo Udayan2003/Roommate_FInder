@@ -1,15 +1,22 @@
 import React, {useState} from "react";
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 function LoginFormComponent() {
     const [input, setInput] = useState({
         "password": '',
         "email": ''
     });
-    const navigate = useNavigate();
-    
-    const handleSubmit = () => {
-        navigate("/user");
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        fetch('http://localhost:8010/proxy/api/auth/login', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            withCredentials: true,
+            body: JSON.stringify({Email: input.email, Password: input.password})
+        }).then(response => {
+            if(response.redirected) window.location.href = response.url;
+        }).catch(err => console.log(err))
     }
 
     const handleChange = (event) => {
