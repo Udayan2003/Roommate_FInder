@@ -1,12 +1,34 @@
-
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 function Slider() {
     const [cleanliness, setCleanliness] = useState(0);
     const [sleepSchedule, setSleepSchedule] = useState(0);
     const [socialActivity, setSocialActivity] = useState(0);
+    const isAuthenticated = () => {
+        fetch('http://localhost:5000/api/auth', {
+            method: 'GET',
+            headers: { 'Content-Type': 'application/json' },
+        }).then(response => { 
+            if (response.status === 301) window.location.href = response.url;
+        })
+    }
 
+    useEffect(isAuthenticated, []);
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        fetch("http://127.0.0.1:8010/proxy/api/user/details", {
+            method: 'PATCH',
+            headers: { 'Content-Type': 'application/json' },
+            credentials: 'omit',
+            body: JSON.stringify({ Cleanliness: cleanliness, SleepSchedule: sleepSchedule, SocialActivity: socialActivity })
+        }).then(response =>{
+            if(response.status === 301)
+                window.location.href = response.url;
+        })
+
+    }
     const handleSocialActivityChange = (e) => {
         setSocialActivity(e.target.value);
     }
@@ -70,7 +92,7 @@ function Slider() {
 
             <div>
                 <Link to="/user">
-                    <button type="button" className="mt-8 group relative w-full flex justify-center py-3 px-5 border border-transparent text-sm font-medium rounded-md text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                    <button onClick={handleSubmit} type="button" className="mt-8 group relative w-full flex justify-center py-3 px-5 border border-transparent text-sm font-medium rounded-md text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                         Submit
                     </button>
                 </Link>

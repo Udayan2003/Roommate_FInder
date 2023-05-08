@@ -10,38 +10,28 @@ function RegisterFormComponent() {
         password: '',
         confirmPassword: ''
     });
-    const request1Options = {
+    const requestOptions = {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({Name: input.name, RegNo: input.regno, Email: input.email, SleepSchedule: null, SocialActivity: null, Cleanliness: null})
     };
-    const request2Options = {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({email: input.email, password: input.password})
-    };
     const postProfile = () => {
-        fetch("http://localhost:8010/proxy/api/storeProfiles", request1Options)
-        fetch("http://localhost:8010/proxy/api/updateCurProfile", request1Options)
+        fetch("http://localhost:5000/api/auth/signup", requestOptions)
+        .then(response => {
+            if(response.redirected) window.location.href = response.url;
+        }).catch(err => console.log(err))
     };
-
-    const postPassword = () => {
-        fetch("http://localhost:8010/proxy/api/storePass", request2Options)
-    }
 
     const handleSubmit = (e) => {
         e.preventDefault();
         if(input.password !== input.confirmPassword){
-           ("Passwords do not match");
+           alert("Passwords do not match");
             return false;
         }
         else{
             postProfile()
-            postPassword()
-            navigator("/details");
         }
     }
-
     const handleChange = (event) => {
         const {name, value} = event.target;
         setInput(prev => ({
